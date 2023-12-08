@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <title>India map</title>
+</head>
+
+<body>
+    <h1 style="color: rgb(151, 207, 151);" align="center">tulip data for interns </h1>
+    <main id="main">
+        <div align="center">
+            <div id="visualization"></div>
+        </div>
+        <script>
+            google.load('visualization', '1', {
+                'packages': ['geochart']
+            });
+            google.setOnLoadCallback(drawVisualization);
+
+            function drawVisualization() {
+                var data = google.visualization.arrayToDataTable([
+                    ['State Code', 'State', 'ONGOING', 'COMPLETED'],
+                    ['IN-UP', 'Uttar Pradesh', 500, 1330],
+                    ['IN-MH', 'Maharashtra', 300, 920],
+                    ['IN-BR', 'Bihar', 150, 510],
+                    ['IN-WB', 'West Bengal', 200, 620],
+                    ['IN-MP', 'Madhya Pradesh', 250, 700],
+                    ['IN-TN', 'Tamil Nadu', 180, 930],
+                    ['IN-RJ', 'Rajasthan', 320, 1030],
+                    ['IN-KA', 'Karnataka', 400, 1290],
+                    ['IN-GJ', 'Gujarat', 450, 1304],
+                    ['IN-AP', 'Andhra Pradesh', 100, 320],
+                    ['IN-OR', 'Orissa', 50, 133],
+                    ['IN-TG', 'Telangana', 80, 233],
+                    ['IN-KL', 'Kerala', 120, 311],
+                    ['IN-JH', 'Jharkhand', 70, 290],
+                    ['IN-AS', 'Assam', 60, 280],
+                    ['IN-PB', 'Punjab', 90, 300],
+                    ['IN-CT', 'Chhattisgarh', 110, 330],
+                    ['IN-HR', 'Haryana', 80, 300],
+                    ['IN-JK', 'Jammu and Kashmir', 40, 200],
+                    ['IN-UT', 'Uttarakhand', 45, 208],
+                    ['IN-HP', 'Himachal Pradesh', 30, 107],
+                    ['IN-TR', 'Tripura', 85, 301],
+                    ['IN-ML', 'Meghalaya', 60, 210],
+                    ['IN-MN', 'Manipur', 55, 220],
+                    ['IN-NL', 'Nagaland', 40, 201],
+                    ['IN-GA', 'Goa', 200, 1121],
+                    ['IN-AR', 'Arunachal Pradesh', 90, 343],
+                    ['IN-MZ', 'Mizoram', 100, 423],
+                    ['IN-SK', 'Sikkim', 150, 724],
+                    ['IN-DL', 'Delhi', 75, 231],
+                    ['IN-PY', 'Puducherry', 80, 233],
+                    ['IN-CH', 'Chandigarh', 70, 230],
+                    ['IN-AN', 'Andaman and Nicobar Islands', 70, 230],
+                    ['IN-DN', 'Dadra and Nagar Haveli', 70, 230],
+                    ['IN-DD', 'Daman and Diu', 65, 229],
+                    ['IN-LD', 'Lakshadweep', 75, 231]
+                ]);
+
+                var options = {
+                    region: 'IN',
+                    domain: 'IN',
+                    displayMode: 'regions',
+                    colorAxis: {
+                        colors: ['#E0F2F7', '#0066CC']
+                    },
+                    resolution: 'provinces',
+                    backgroundColor: 'white',
+                    defaultColor: '#f5f5f5',
+                    width: 500,
+                    height: 400,
+                };
+
+                var geochart = new google.visualization.GeoChart(
+                    document.getElementById('visualization')
+                );
+
+                geochart.draw(data, options);
+            }
+        </script>
+
+    </main>
+
+    made by Ansh Makker
+</body>
+
+</html>
